@@ -1,15 +1,7 @@
 import { Moon, Sun} from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { useTheme } from "@/configs/theme-provider";
-import lq_logo from "@/assets/images/lq-logo-2.png";
-import { Input } from "../ui/input";
 
 export default function Header() {
   const { theme, setTheme } = useTheme();

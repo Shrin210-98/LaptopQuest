@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import Header from "@/components/layout/Header"
 import Autocomplete from "@/components/form-inputs/Autocomplete"

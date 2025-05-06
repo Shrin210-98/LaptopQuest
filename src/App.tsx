@@ -1,5 +1,5 @@
 import { ThemeProvider } from "./configs/theme-provider";
-import Home from "./pages/home/Home.jsx"
+import Home from "./pages/home/Home"
 
 function App() {
 
