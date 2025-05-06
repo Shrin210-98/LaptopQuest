@@ -187,9 +187,10 @@ function FilterLayout({ filterConfig, filterButtons, children }) {
   return (
     <>
       <div
-        className={`overflow-hidden
-          border-b border-gray-300 dark:border-gray-600 mx-8
-          transition-all duration-800 ease-in-out ${filterConfig.open ? "max-h-[120px]" : "max-h-0 opacity-0 invisible pointer-events-none"}`}
+        className={`overflow-hidden border-b border-gray-300 dark:border-gray-600 mx-8
+          transition-all duration-800 ease-in-out ${
+            filterConfig.open ? "max-h-[340px] md:max-h-[120px]" : "max-h-0 opacity-0 invisible pointer-events-none"
+          }`}
       >
         {children}
       </div>

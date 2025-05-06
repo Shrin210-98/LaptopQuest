@@ -1,4 +1,4 @@
-import path from "path"
+import path, { resolve } from "path"
 import tailwindcss from "@tailwindcss/vite"
 import react from "@vitejs/plugin-react"
 import { defineConfig } from "vite"
@@ -13,6 +13,13 @@ export default defineConfig({
   },
   base: '/LaptopQuest/',
   build: {
-    outDir: 'dist', // Ensure this matches your deploy directory
+    // outDir: 'dist', // Ensure this matches your deploy directory
+    // emptyOutDir: true, // Clears old files on build
+    manifest: true, // Generates asset manifest
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html')
+      }
+    }
   }
 })
