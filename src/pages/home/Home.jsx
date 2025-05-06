@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 import Header from "@/components/layout/Header"
 import Autocomplete from "@/components/form-inputs/Autocomplete"
 import { Input } from "@/components/ui/input"
-import { ChevronDown, ChevronLeft, ChevronRight, ChevronUp, PanelLeft, PanelTop, Search } from "lucide-react"
+import { ChevronDown, ChevronLeft, ChevronRight, ChevronUp, PanelRight, PanelTop, Search } from "lucide-react"
 import LaptopCard from "./LaptopCard"
 
 import laptopImg1 from "@/assets/images/laptop-1.avif"
@@ -32,7 +32,7 @@ export default function Home() {
             size="sm"
             onClick={() => setFilterConfig((prev) => ({ ...prev, open: !prev.open }))}
           >
-            {filterConfig.rightPanel ? filterConfig.open ? <ChevronLeft /> : <ChevronRight /> : filterConfig.open ? <ChevronUp /> : <ChevronDown />}
+            {filterConfig.rightPanel ? filterConfig.open ? <ChevronRight /> : <ChevronLeft /> : filterConfig.open ? <ChevronUp /> : <ChevronDown />}
             Filters
           </Button>
           <Button
@@ -46,7 +46,7 @@ export default function Home() {
               }))
             }
           >
-            {filterConfig.rightPanel ? <PanelLeft /> : <PanelTop />}
+            {filterConfig.rightPanel ? <PanelTop /> : <PanelRight />}
           </Button>
         </div>
       </div>
@@ -76,7 +76,7 @@ export default function Home() {
         </div>
         <div className={`${filterConfig.rightPanel ? "absolute top-0 right-0 z-20" : "hidden"}`}>{filterButtons}</div>
         <FilterLayout {...{ filterConfig, filterButtons }}>
-          <div className={`grid ${filterConfig.rightPanel ? "grid-rows-12 mx-5" : "grid-rows-12 md:grid-cols-4 my-5 mb-10 mx-5"} gap-4 `}>
+          <div className={`grid ${filterConfig.rightPanel ? "grid-rows-12 mx-5" : "grid-rows-12 md:grid-cols-4 my-5  mb-0 mx-5"} gap-4 `}>
             <div>
               <Autocomplete
                 name="brand"
@@ -189,7 +189,7 @@ function FilterLayout({ filterConfig, filterButtons, children }) {
       <div
         className={`overflow-hidden
           border-b border-gray-300 dark:border-gray-600 mx-8
-          transition-all duration-800 ease-in-out ${filterConfig.open ? "max-h-[150px]" : "max-h-0 opacity-0 invisible pointer-events-none"}`}
+          transition-all duration-800 ease-in-out ${filterConfig.open ? "max-h-[120px]" : "max-h-0 opacity-0 invisible pointer-events-none"}`}
       >
         {children}
       </div>

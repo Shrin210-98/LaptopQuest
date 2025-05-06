@@ -11,4 +11,8 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  base: '/LaptopQuest/',
+  build: {
+    outDir: 'dist', // Ensure this matches your deploy directory
+  }
 })
