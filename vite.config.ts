@@ -13,12 +13,15 @@ export default defineConfig({
   },
   base: '/LaptopQuest/',
   build: {
-    // outDir: 'dist', // Ensure this matches your deploy directory
-    // emptyOutDir: true, // Clears old files on build
-    manifest: true, // Generates asset manifest
+    outDir: 'dist',
+    emptyOutDir: true, // Clear old files on build
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'index.html')
+        main: resolve(__dirname, 'index.html') // Explicit entry point
+      },
+      output: {
+        assetFileNames: 'assets/[name]-[hash].[ext]',
+        entryFileNames: 'assets/[name]-[hash].js'
       }
     }
   }
